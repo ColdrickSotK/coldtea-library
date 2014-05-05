@@ -1,0 +1,13 @@
+# Copyright (c) 2014 Adam Coldrick (SotK)
+# See LICENSE file for full license information
+
+import sys
+
+import coldtealib
+
+def main(path):
+    db = coldtealib.data.Database.from_file(path)
+    print len(db)
+
+if __name__ == "main":
+    main(sys.argv[1])
