@@ -32,3 +32,6 @@ class Database():
     def to_file(self, handle):
         """Save the database to a file in YAML format."""
         handle.write(self.__repr__())
+
+    def add(self, entry):
+        self.data.append(entry)
