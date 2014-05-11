@@ -10,7 +10,7 @@ def main(path):
     print 'Initializing database...'
     with open(path, 'r') as f:
         db = coldtealib.data.Database.from_file(f)
-    db.data.append({'author': 'foo', 'name': 'bar'})
+    db.add({'author': 'foo', 'name': 'bar'})
     with open(path, 'w') as f:
         db.to_file(f)
     print db
