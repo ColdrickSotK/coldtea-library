@@ -6,8 +6,14 @@ import sys
 import coldtealib
 
 def main(path):
-    db = coldtealib.data.Database.from_file(path)
-    print len(db)
+    """Run the program. This will end up running a server process."""
+    print 'Initializing database...'
+    with open(path, 'r') as f:
+        db = coldtealib.data.Database.from_file(f)
+    db.data.append({'author': 'foo', 'name': 'bar'})
+    with open(path, 'w') as f:
+        db.to_file(f)
+    print db
 
-if __name__ == "main":
+if __name__ == "__main__":
     main(sys.argv[1])
